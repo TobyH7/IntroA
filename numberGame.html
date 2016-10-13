@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>Number Comparer</title>
+		<style>
+			body {
+				background-color: gray;
+				font-size: 2em;
+			}
+				p.loss {
+				font-size: 6em;
+				color: red;
+				font-family: impact, fantasy;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+			p.win {
+				font-size: 6em;
+				color: green;
+				font-family: comic sans, cursive;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+			input.refresh {
+				width: 80%;
+				height: 60px;
+				text-align: center;
+				display: block;
+				background-color: black;
+				color: lightgray;
+				position: absolute;
+				font-size: 1.5em;
+				border: 1px solid black;
+			}
+			input:hover {
+				background-color: #1A1A1A;
+				border: 1px solid green;
+				color: white;
+			}
+			input:active {
+				background-color: #212121;
+				color: lightgray;
+			}		
+		</style>
+	</head>
+	<body>
+		<p id="user">
+		
+		</p>
+		<p id="computer">
+		
+		</p>
+		<p id="win" class="win">
+		
+		</p>
+		<p>
+		
+		<p id="loss" class="loss">
+		
+		</p>
+		<script>
+			var input = prompt("Pick a number between one and five"); 
+			var random = function (number) {
+				return Math.floor(number * 5) + 1;
+			};
+			var userAnswer = parseInt(input);
+			var computerAnswer= random(Math.random());
+			// var computerAnswer = Math.random()*5;
+			document.getElementById("user").innerHTML = "You picked " + userAnswer;
+			document.getElementById("computer").innerHTML = "The computer picked " + computerAnswer;
+			console.log(userAnswer);
+			console.log(computerAnswer);
+			if (userAnswer === computerAnswer) {
+				document.getElementById("win").innerHTML = "You won";
+			}
+			else {
+				document.getElementById("loss").innerHTML = "You Lose";
+			};
+		</script>
+		<input class="refresh" type="button" value="Play Again" onClick="location.reload()">
+	</body>
+</html>
