@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>CheckerBoard</title>
+	</head>
+	<body>
+		<canvas id="myCanvas"></canvas>
+		<script>
+			var x = 0;
+			var y = 0;
+			var maxX = prompt("How wide do you want your checker board?");
+			var maxY = prompt("How high do you want your checker board?");
+			var divX = prompt("How many squares wide do you want your checker board?");
+			var divY = prompt("How many squares high do you want your checker board?");
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			canvas.width = maxX;
+			canvas.height = maxY;
+			canvas.style.border = "1px solid black";
+			for (x; x <= maxX; x = x + maxX / divX) {
+				ctx.beginPath();
+				ctx.moveTo(x,0);  
+				ctx.lineTo(x,maxY);
+				ctx.strokeStyle = "purple";
+				ctx.stroke();
+				for (y; y <= maxY; y = y + maxY / divY) {
+					ctx.beginPath();
+					ctx.moveTo(0,y);
+					ctx.lineTo(maxX,y);
+					ctx.strokeStyle = "purple";
+					ctx.stroke()
+				}	
+			}
+			x = 0;
+			y = 0;
+			while (x <= maxX) {
+				while (y<=maxY) {
+					ctx.beginPath()
+					ctx.fillStyle = "red";
+					ctx.fillRect(x, y, maxX/divX, maxY/divY);
+					
+					ctx.beginPath();
+					ctx.fillStyle = "purple"
+					ctx.fillRect(x+maxX/divX, y+maxY/divY, maxX/divX, maxY/divY);
+					y = y + 2 * maxY/divY;
+				}
+				x = x + 2 * maxX/divX;
+				y = 0;
+			}
+			/*for (y; y <= maxY; y = y + maxY / 10) {
+				ctx.beginPath();
+				ctx.moveTo(0,y);
+				ctx.lineTo(maxX,y);
+				ctx.strokeStyle = "red";
+				ctx.stroke();
+			}*/
+		</script>
+		
+	</body>
+</html>
