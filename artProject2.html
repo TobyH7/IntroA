@@ -1,0 +1,28 @@
+<html>
+	<head>
+	<title>Art is Still Dumb</title>
+	</head>
+	<body>
+		<canvas id = "art" style = "border: 1px solid black;"></canvas>
+		<script>
+			var x = prompt("How wide do you want the canvas?")
+			var y = prompt("How tall do you want the canvas?")
+			var canvas = document.getElementById("art");
+			var ctx = canvas.getContext("2d");
+			canvas.width = x;
+			canvas.height = y;
+			ctx.fillStyle = "black";
+			ctx.fillRect(x/4,0,x/40,y);
+			ctx.fillRect(0,y/1.3793,x,y/40);
+			ctx.fillRect(0,y/2.8572,x/4,y/40);
+			ctx.fillRect(x/1.0811,y*0.75,x/40,y/4);
+			ctx.fillRect(x/1.0526,y/1.1594,x/20,y/40);
+			ctx.fillStyle = "blue";
+			ctx.fillRect(0,y*0.75,x/4,y/4);
+			ctx.fillStyle = "red";
+			ctx.fillRect(x/3.6364,0,x/1.3793,y/1.3793);
+			ctx.fillStyle = "yellow";
+			ctx.fillRect(x/1.0526,y/1.1268,x/20,y/8.8889);
+		</script>
+	</body>
+</html>
