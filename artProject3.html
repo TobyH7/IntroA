@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Art</title>
+	</head>
+	<body>
+		<canvas id = "art" height = "600px" width = "600px" style = "border: 1px solid black;"></canvas>
+		<script>
+			var canvas = document.getElementById("art");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "gray";
+			ctx.fillRect(0,0,600,600);
+			var x = 10;
+			var y = 10;
+			for (x = 10; x<=600; x=x+20) {
+				for (y = 10; y<=600; y=y+20) {
+					ctx.beginPath();
+					ctx.arc(x,y,10,0,2*Math.PI);
+					ctx.fillStyle = "#eeefde";
+					ctx.fill();
+				}	
+			}
+			x = 0;
+			y = 0;
+			for (x; x <= 600; x = x + 20) {
+				ctx.beginPath();
+				ctx.moveTo(x,0);  
+				ctx.lineTo(x,600);
+				ctx.strokeStyle = "gray";
+				ctx.stroke();
+				for (y; y <= 600; y = y + 20) {
+					ctx.beginPath();
+					ctx.moveTo(0,y);
+					ctx.lineTo(600,y);
+					ctx.strokeStyle = "gray";
+					ctx.stroke()
+				}	
+			}
+			ctx.strokeStyle = "gray";
+			ctx.beginPath();
+			ctx.arc(0,300,300,Math.PI * 1.5,0.5*Math.PI);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.arc(600,300,300,Math.PI * 0.5,1.5*Math.PI);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.arc(300,0,300,Math.PI*2,Math.PI);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.arc(300,600,300,Math.PI,0);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.arc(300,300,200,0,2*Math.PI);
+			ctx.stroke();
+		</script>
+	</body>
+</html>
